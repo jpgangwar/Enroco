@@ -1,0 +1,25 @@
+<div class="col-md-6">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <p>Full Name: <%= f.text_field 'full_name', { :class => "form-control" } %></p>
+    <p>Age: <%= f.number_field  'age', { :class => "form-control" } %></p>
+    <p>Gender<%= f.text_field 'gender',{ :class => "form-control" } %></p>
+    <p>Area of intrest<%= f.text_field 'area_of_intrest',{ :class => "form-control" } %></p>
+    <p>Hobbies<%= f.text_field 'hobbies',{ :class => "form-control" } %></p>
+    <%= f.submit "Save changes", { :class => "btn btn-primary new-user" } %> |
+    <%= link_to 'Back', users_path, { :class => "btn btn-primary new-user" } %>
+  </div>
+<% end %>
+</div>

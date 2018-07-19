@@ -1,0 +1,30 @@
+<%= content_for(:title, 'User Details') %>
+<div class="container">
+<p class="user-heading"><%=  @user.full_name %></p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Area of intrest</th>
+      <th>Hobbies</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <p id="notice"><%= notice %></p>
+      <tr>
+        <td><%= @user.full_name %></td>
+        <td><%= @user.age %></td>
+        <td><%= @user.gender %></td>
+        <td><%= @user.area_of_intrest %></td>
+        <td><%= @user.hobbies %></td>
+      </tr>
+        
+  </tbody>
+</table>
+<%= link_to 'Edit', edit_user_path(@user), { :class => "btn btn-primary new-user" }%> |
+<%= link_to 'Back', users_path, { :class => "btn btn-primary new-user" } %>
+
+</div>
